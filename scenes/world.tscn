@@ -1,7 +1,14 @@
-[gd_scene load_steps=3 format=4 uid="uid://d3crfd65nxmuh"]
+[gd_scene load_steps=5 format=4 uid="uid://d3crfd65nxmuh"]
 
 [ext_resource type="Script" uid="uid://5qj18riatjgi" path="res://code/world.gd" id="1_nnsk1"]
 [ext_resource type="TileSet" uid="uid://3gp1qetcbdfq" path="res://tilesets/background.tres" id="2_rwgxs"]
+[ext_resource type="PackedScene" uid="uid://b5b1ybu5vxstb" path="res://scenes/enemy.tscn" id="3_4wyf3"]
+
+[sub_resource type="Curve2D" id="Curve2D_rwgxs"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 40, 0, 0, 0, 0, 72, 40, 0, 0, 0, 0, 72, 72, 0, 0, 0, 0, 136, 72, 0, 0, 0, 0, 136, 40, 0, 0, 0, 0, 176, 40)
+}
+point_count = 6
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_nnsk1")
@@ -13,5 +20,11 @@ tile_set = ExtResource("2_rwgxs")
 [node name="Towers" type="Node2D" parent="."]
 
 [node name="Paths" type="Node2D" parent="."]
+
+[node name="Path2D" type="Path2D" parent="Paths"]
+curve = SubResource("Curve2D_rwgxs")
+
+[node name="Enemy" parent="Paths/Path2D" instance=ExtResource("3_4wyf3")]
+position = Vector2(0, 40)
 
 [node name="Enemies" type="Node2D" parent="."]

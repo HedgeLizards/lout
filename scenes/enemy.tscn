@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5b1ybu5vxstb"]
+
+[ext_resource type="Texture2D" uid="uid://t3ucukl7lmmm" path="res://icon.svg" id="1_7p1mj"]
+[ext_resource type="Script" uid="uid://c8j1ytw3jcids" path="res://code/enemy.gd" id="1_md0e3"]
+
+[node name="Enemy" type="PathFollow2D"]
+rotates = false
+loop = false
+script = ExtResource("1_md0e3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_7p1mj")
+
+[node name="MoveTimer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="MoveTimer" to="." method="move"]

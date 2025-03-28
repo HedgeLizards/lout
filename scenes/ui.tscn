@@ -1,0 +1,53 @@
+[gd_scene load_steps=5 format=3 uid="uid://c0pp0m557b0hp"]
+
+[ext_resource type="PackedScene" uid="uid://c2pqmnnauqe51" path="res://scenes/buy_button.tscn" id="1_nt7q6"]
+[ext_resource type="Texture2D" uid="uid://cx1h07kps2lqm" path="res://art/instruments/flute.png" id="2_gdt2y"]
+[ext_resource type="Texture2D" uid="uid://bpuo75wm7jr4f" path="res://art/instruments/stringed.png" id="2_x4jx1"]
+[ext_resource type="Texture2D" uid="uid://c84vpl7lom7ij" path="res://art/instruments/drums.png" id="4_wm3ai"]
+
+[node name="UI" type="CanvasLayer"]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -64.0
+grow_horizontal = 0
+grow_vertical = 2
+alignment = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/PanelContainer"]
+layout_direction = 3
+layout_mode = 2
+
+[node name="Control" type="Control" parent="HBoxContainer/PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="HBoxContainer/PanelContainer/VBoxContainer/Control"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+offset_top = 4.0
+offset_right = 64.0
+offset_bottom = 68.0
+color = Color(0, 0, 0, 0)
+
+[node name="BuyFlute" parent="HBoxContainer/PanelContainer/VBoxContainer" instance=ExtResource("1_nt7q6")]
+layout_mode = 2
+texture = ExtResource("2_gdt2y")
+tower_type = 3
+
+[node name="BuyStringed" parent="HBoxContainer/PanelContainer/VBoxContainer" instance=ExtResource("1_nt7q6")]
+layout_mode = 2
+texture = ExtResource("2_x4jx1")
+tower_type = 1
+
+[node name="BuyDrums" parent="HBoxContainer/PanelContainer/VBoxContainer" instance=ExtResource("1_nt7q6")]
+layout_mode = 2
+texture = ExtResource("4_wm3ai")
+tower_type = 2

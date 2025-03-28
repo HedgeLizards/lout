@@ -7,9 +7,9 @@
 
 [sub_resource type="Curve2D" id="Curve2D_rwgxs"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 40, 0, 0, 0, 0, 72, 40, 0, 0, 0, 0, 72, 72, 0, 0, 0, 0, 136, 72, 0, 0, 0, 0, 136, 40, 0, 0, 0, 0, 176, 40)
+"points": PackedVector2Array(0, 0, 0, 0, 0, 96, 0, 0, 0, 0, 128, 96, 0, 0, 0, 0, 128, 160, 0, 0, 0, 0, 288, 160, 0, 0, 0, 0, 288, 96, 0, 0, 0, 0, 544, 96, 0, 0, 0, 0, 544, 224, 0, 0, 0, 0, 896, 224, 0, 0, 0, 0, 896, 512, 0, 0, 0, 0, 0, 512)
 }
-point_count = 6
+point_count = 10
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_nnsk1")
@@ -30,9 +30,7 @@ position = Vector2(896, 352)
 curve = SubResource("Curve2D_rwgxs")
 
 [node name="Enemy" parent="Paths/Path2D" instance=ExtResource("3_4wyf3")]
-position = Vector2(0, 40)
-
-[node name="Enemies" type="Node2D" parent="."]
+position = Vector2(0, 96)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0

@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=4 uid="uid://d3crfd65nxmuh"]
+[gd_scene load_steps=6 format=4 uid="uid://d3crfd65nxmuh"]
 
 [ext_resource type="Script" uid="uid://5qj18riatjgi" path="res://code/world.gd" id="1_nnsk1"]
 [ext_resource type="TileSet" uid="uid://3gp1qetcbdfq" path="res://tilesets/background.tres" id="2_rwgxs"]
 [ext_resource type="PackedScene" uid="uid://b5b1ybu5vxstb" path="res://scenes/enemy.tscn" id="3_4wyf3"]
+[ext_resource type="PackedScene" uid="uid://dboht7lma5bom" path="res://scenes/instruments/drums.tscn" id="3_k0juu"]
 
 [sub_resource type="Curve2D" id="Curve2D_rwgxs"]
 _data = {
@@ -20,7 +21,7 @@ tile_set = ExtResource("2_rwgxs")
 
 [node name="Towers" type="Node2D" parent="."]
 
-[node name="Drums" parent="Towers" instance=ExtResource("3_4wyf3")]
+[node name="Drums" parent="Towers" instance=ExtResource("3_k0juu")]
 position = Vector2(896, 352)
 
 [node name="Paths" type="Node2D" parent="."]

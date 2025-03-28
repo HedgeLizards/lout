@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dboht7lma5bom"]
+
+[ext_resource type="Texture2D" uid="uid://c84vpl7lom7ij" path="res://art/instruments/drums.png" id="1_uuae0"]
+
+[node name="Drums" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_uuae0")

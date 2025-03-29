@@ -23,8 +23,6 @@ func _input(event: InputEvent) -> void:
 		global_position = %Grid.to_world(%Grid.to_grid(event.global_position))
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event is InputEventMouseButton:
-		prints(selected, event)
 	if selected != null and event is InputEventMouseButton and event.pressed and event.button_index == 1:
 		var tower = selected.scene.instantiate()
 		tower.global_position = global_position

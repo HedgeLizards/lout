@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=4 uid="uid://b4iokhlcbjobp"]
+[gd_scene load_steps=7 format=4 uid="uid://b4iokhlcbjobp"]
 
 [ext_resource type="Script" uid="uid://bm8ckcxjhybwo" path="res://code/level.gd" id="1_mx8sn"]
 [ext_resource type="TileSet" uid="uid://3gp1qetcbdfq" path="res://tilesets/background.tres" id="1_w8frs"]
 [ext_resource type="PackedScene" uid="uid://b5b1ybu5vxstb" path="res://scenes/enemy.tscn" id="2_mx8sn"]
 [ext_resource type="PackedScene" uid="uid://dboht7lma5bom" path="res://scenes/instruments/drums.tscn" id="3_ppgk2"]
+[ext_resource type="PackedScene" uid="uid://bs7ofrpud6qew" path="res://scenes/instruments/stringed.tscn" id="5_ppgk2"]
 
 [sub_resource type="Curve2D" id="Curve2D_rwgxs"]
 _data = {
@@ -11,7 +12,7 @@ _data = {
 }
 point_count = 10
 
-[node name="level" type="Node2D"]
+[node name="Level" type="Node2D"]
 script = ExtResource("1_mx8sn")
 
 [node name="Background" type="TileMapLayer" parent="."]
@@ -32,3 +33,6 @@ unique_name_in_owner = true
 
 [node name="Drums" parent="Towers" instance=ExtResource("3_ppgk2")]
 position = Vector2(896, 352)
+
+[node name="Stringed" parent="Towers" instance=ExtResource("5_ppgk2")]
+position = Vector2(352, 192)

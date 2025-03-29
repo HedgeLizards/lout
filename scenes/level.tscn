@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b324booa8kdql" path="res://art/iso_tiles.png" id="2_mx8sn"]
 [ext_resource type="PackedScene" uid="uid://dboht7lma5bom" path="res://scenes/instruments/drums.tscn" id="3_ppgk2"]
 [ext_resource type="PackedScene" uid="uid://dvp0hvecwwk7l" path="res://scenes/instruments/flute.tscn" id="5_2r41h"]
-[ext_resource type="PackedScene" uid="uid://bs7ofrpud6qew" path="res://scenes/instruments/stringed.tscn" id="5_ppgk2"]
+[ext_resource type="PackedScene" uid="uid://bs7ofrpud6qew" path="res://scenes/instruments/guitar.tscn" id="5_ppgk2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ppgk2"]
 texture = ExtResource("2_mx8sn")

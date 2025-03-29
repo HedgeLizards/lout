@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bs7ofrpud6qew"]
+
+[ext_resource type="Script" uid="uid://cclguq0rtnkna" path="res://code/instrument.gd" id="1_ipitw"]
+[ext_resource type="Texture2D" uid="uid://bpuo75wm7jr4f" path="res://art/instruments/stringed.png" id="2_oc2r5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_b3lkp"]
+radius = 128.0
+
+[node name="Guitar" type="Node2D"]
+script = ExtResource("1_ipitw")
+num_notes = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_oc2r5")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_b3lkp")

@@ -8,6 +8,14 @@ var total_flight: float = 0.3
 var damage: float = 1
 
 
+const scene = preload("res://scenes/pling.tscn")
+
+static func create(position, target) -> Projectile:
+	var projectile: Projectile = scene.instantiate()
+	projectile.target = target
+	projectile.position = position
+	return projectile
+
 func _ready() -> void:
 	start_pos = position
 	target_pos = target.position

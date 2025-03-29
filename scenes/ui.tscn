@@ -49,7 +49,7 @@ layout_mode = 2
 texture = ExtResource("2_gdt2y")
 tower_type = 3
 
-[node name="BuyStringed" parent="HBoxContainer/PanelContainer/VBoxContainer" instance=ExtResource("1_nt7q6")]
+[node name="BuyGuitar" parent="HBoxContainer/PanelContainer/VBoxContainer" instance=ExtResource("1_nt7q6")]
 layout_mode = 2
 texture = ExtResource("2_x4jx1")
 tower_type = 1

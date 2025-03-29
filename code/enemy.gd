@@ -31,4 +31,9 @@ func move():
 	tween.set_ease(Tween.EASE_IN).tween_property($Sprite2D, 'offset:y', 0, 0.25).set_delay(0.25)
 
 func damage(amount: float):
-	pass
+	health -= amount
+	if health <= 0:
+		defeat()
+
+func defeat():
+	queue_free()

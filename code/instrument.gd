@@ -8,7 +8,6 @@ func shoot():
 			shoot_at(area.get_parent())
 
 func shoot_at(enemy: Enemy) -> void:
-	prints(self, projectile_type)
 	var projectile: Projectile = projectile_type.instantiate()
 	projectile.target = enemy
 	projectile.position = global_position

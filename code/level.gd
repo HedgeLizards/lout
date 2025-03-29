@@ -8,8 +8,7 @@ func update() -> void:
 	for tower in $Towers.get_children():
 		tower.shoot()
 
-func add_tower(blueprint: Tower, pos: Vector2i) -> void:
-	
+func add_tower(blueprint: Tower, pos: Vector2i) -> void:	
 	var tower = blueprint.scene.instantiate()
 	tower.position = $'../Grid'.to_world(pos)
 	prints(pos, tower.position)

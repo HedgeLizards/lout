@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://c0pp0m557b0hp"]
+[gd_scene load_steps=7 format=3 uid="uid://c0pp0m557b0hp"]
 
+[ext_resource type="Script" uid="uid://dmdgj30h2t62r" path="res://code/culture_label.gd" id="1_8dubc"]
 [ext_resource type="PackedScene" uid="uid://c2pqmnnauqe51" path="res://scenes/buy_button.tscn" id="1_nt7q6"]
 [ext_resource type="Texture2D" uid="uid://cx1h07kps2lqm" path="res://art/instruments/flute.png" id="2_gdt2y"]
 [ext_resource type="Texture2D" uid="uid://bpuo75wm7jr4f" path="res://art/instruments/stringed.png" id="2_x4jx1"]
@@ -26,7 +27,12 @@ layout_mode = 2
 layout_direction = 3
 layout_mode = 2
 
+[node name="CultureLabel" type="Label" parent="HBoxContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+script = ExtResource("1_8dubc")
+
 [node name="Control" type="Control" parent="HBoxContainer/PanelContainer/VBoxContainer"]
+visible = false
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 

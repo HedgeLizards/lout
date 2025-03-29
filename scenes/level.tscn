@@ -7,9 +7,9 @@
 
 [sub_resource type="Curve2D" id="Curve2D_rwgxs"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -32, 96, 0, 0, 0, 0, 128, 96, 0, 0, 0, 0, 128, 160, 0, 0, 0, 0, 288, 160, 0, 0, 0, 0, 288, 128, 0, 0, 0, 0, 544, 128, 0, 0, 0, 0, 544, 224, 0, 0, 0, 0, 896, 224, 0, 0, 0, 0, 896, 512, 0, 0, 0, 0, -32, 512)
+"points": PackedVector2Array(0, 0, 0, 0, -32, 96, 0, 0, 0, 0, 128, 96, 0, 0, 0, 0, 128, 160, 0, 0, 0, 0, 288, 160, 0, 0, 0, 0, 288, 128, 0, 0, 0, 0, 320, 128)
 }
-point_count = 10
+point_count = 6
 
 [node name="Level" type="Node2D"]
 y_sort_enabled = true
@@ -32,7 +32,7 @@ unique_name_in_owner = true
 y_sort_enabled = true
 
 [node name="Drums" parent="Towers" instance=ExtResource("3_ppgk2")]
-position = Vector2(896, 352)
+position = Vector2(352, 128)
 
 [node name="Stringed" parent="Towers" instance=ExtResource("5_ppgk2")]
-position = Vector2(352, 192)
+position = Vector2(352, 320)

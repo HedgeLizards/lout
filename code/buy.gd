@@ -10,4 +10,4 @@ func _ready() -> void:
 
 func _on_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.pressed and event.button_index == 1:
-		$/root/World/Builder.try_buy(Tower.from_id(tower_type))
+		$/root/World/Builder.try_select(Tower.from_id(tower_type))

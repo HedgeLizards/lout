@@ -1,6 +1,7 @@
 extends Node2D
 
 const Enemy = preload('res://scenes/enemy.tscn')
+var culture: int = 100
 
 func spawn_enemy():
 	var enemy = Enemy.instantiate()

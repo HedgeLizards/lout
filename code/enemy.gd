@@ -54,4 +54,5 @@ func damage(amount: float):
 		defeat()
 
 func defeat():
+	Culture.culture += gain
 	queue_free()

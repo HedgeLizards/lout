@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://c0pp0m557b0hp"]
+[gd_scene load_steps=6 format=3 uid="uid://c0pp0m557b0hp"]
 
 [ext_resource type="PackedScene" uid="uid://c2pqmnnauqe51" path="res://scenes/buy_button.tscn" id="1_nt7q6"]
 [ext_resource type="Texture2D" uid="uid://cx1h07kps2lqm" path="res://art/instruments/flute.png" id="2_gdt2y"]
 [ext_resource type="Texture2D" uid="uid://bpuo75wm7jr4f" path="res://art/instruments/stringed.png" id="2_x4jx1"]
 [ext_resource type="Texture2D" uid="uid://c84vpl7lom7ij" path="res://art/instruments/drums.png" id="4_wm3ai"]
+[ext_resource type="Texture2D" uid="uid://chmr40cxrhmf4" path="res://art/cancel.png" id="5_wm3ai"]
 
 [node name="UI" type="CanvasLayer"]
 
@@ -51,3 +52,7 @@ tower_type = 1
 layout_mode = 2
 texture = ExtResource("4_wm3ai")
 tower_type = 2
+
+[node name="CancelBuy" parent="HBoxContainer/PanelContainer/VBoxContainer" instance=ExtResource("1_nt7q6")]
+layout_mode = 2
+texture = ExtResource("5_wm3ai")

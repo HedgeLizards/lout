@@ -12,6 +12,7 @@ _data = {
 point_count = 10
 
 [node name="level" type="Node2D"]
+y_sort_enabled = true
 script = ExtResource("1_mx8sn")
 
 [node name="Background" type="TileMapLayer" parent="."]
@@ -20,8 +21,10 @@ tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAIAAAABAAA
 tile_set = ExtResource("1_w8frs")
 
 [node name="Paths" type="Node2D" parent="."]
+y_sort_enabled = true
 
 [node name="Path2D" type="Path2D" parent="Paths"]
+y_sort_enabled = true
 curve = SubResource("Curve2D_rwgxs")
 
 [node name="Enemy" parent="Paths/Path2D" instance=ExtResource("2_mx8sn")]
@@ -29,6 +32,7 @@ position = Vector2(0, 96)
 
 [node name="Towers" type="Node2D" parent="."]
 unique_name_in_owner = true
+y_sort_enabled = true
 
 [node name="Drums" parent="Towers" instance=ExtResource("3_ppgk2")]
 position = Vector2(896, 352)

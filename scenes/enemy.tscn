@@ -11,8 +11,3 @@ script = ExtResource("1_md0e3")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("1_7p1mj")
-
-[node name="MoveTimer" type="Timer" parent="."]
-autostart = true
-
-[connection signal="timeout" from="MoveTimer" to="." method="move"]

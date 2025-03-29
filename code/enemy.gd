@@ -1,6 +1,6 @@
 class_name Enemy extends PathFollow2D
 
-enum EnemyType { REGULAR, TANKY, FAST }
+enum EnemyType { REGULAR, FAST, TANKY }
 
 @export var type: EnemyType
 
@@ -16,16 +16,16 @@ func _ready():
 			health = 10
 			unculture = 5
 			gain = 1
-		EnemyType.TANKY:
-			speed = 50
-			health = 20
-			unculture = 8
-			gain = 3
 		EnemyType.FAST:
 			speed = 100
 			health = 5
 			unculture = 3
 			gain = 1
+		EnemyType.TANKY:
+			speed = 50
+			health = 20
+			unculture = 8
+			gain = 3
 
 func move():
 	

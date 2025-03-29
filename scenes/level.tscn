@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://b4iokhlcbjobp"]
+[gd_scene load_steps=13 format=4 uid="uid://b4iokhlcbjobp"]
 
 [ext_resource type="Script" uid="uid://bm8ckcxjhybwo" path="res://code/level.gd" id="1_mx8sn"]
 [ext_resource type="Texture2D" uid="uid://busvls6gphgnx" path="res://art/tiles/SPR_IsoTileset.png" id="2_ppgk2"]
@@ -36,6 +36,18 @@ _data = {
 }
 point_count = 15
 
+[sub_resource type="Curve2D" id="Curve2D_ppgk2"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1024, 0, 0, 0, 0, 0, 768, 128, 0, 0, 0, 0, 1024, 256, 0, 0, 0, 0, 832, 352, 0, 0, 0, 0, 960, 416, 0, 0, 0, 0, 704, 544, 0, 0, 0, 0, 256, 320, 0, 0, 0, 0, 128, 384, 0, 0, 0, 0, 320, 480, 0, 0, 0, 0, 192, 544)
+}
+point_count = 10
+
+[sub_resource type="Curve2D" id="Curve2D_2r41h"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1152, 320, 0, 0, 0, 0, 1024, 256, 0, 0, 0, 0, 832, 352, 0, 0, 0, 0, 960, 416, 0, 0, 0, 0, 704, 544, 0, 0, 0, 0, 256, 320, 0, 0, 0, 0, 128, 384, 0, 0, 0, 0, 320, 480, 0, 0, 0, 0, 192, 544)
+}
+point_count = 9
+
 [node name="Level" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_mx8sn")
@@ -56,9 +68,17 @@ types = Array[int]([0, 1])
 [node name="Paths" type="Node2D" parent="."]
 y_sort_enabled = true
 
-[node name="Path2D" type="Path2D" parent="Paths"]
+[node name="Path2D1" type="Path2D" parent="Paths"]
 y_sort_enabled = true
 curve = SubResource("Curve2D_rwgxs")
+
+[node name="Path2D2" type="Path2D" parent="Paths"]
+y_sort_enabled = true
+curve = SubResource("Curve2D_ppgk2")
+
+[node name="Path2D3" type="Path2D" parent="Paths"]
+y_sort_enabled = true
+curve = SubResource("Curve2D_2r41h")
 
 [node name="Towers" type="Node2D" parent="."]
 unique_name_in_owner = true

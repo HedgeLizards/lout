@@ -19,6 +19,8 @@ static func create(position, target) -> Projectile:
 func _ready() -> void:
 	start_pos = position
 	target_pos = target.position
+	var target_sprite = target.get_node('Sprite2D')
+	target_pos.y -= target_sprite.texture.get_height() * target_sprite.scale.y / 2
 	target.tree_exited.connect(func(): target = null)
 
 func _process(delta: float) -> void:

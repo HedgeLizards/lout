@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://bdooqy81avn0w"]
+[gd_scene load_steps=3 format=3 uid="uid://bdooqy81avn0w"]
 
+[ext_resource type="Texture2D" uid="uid://bh283r1ltqnse" path="res://art/pling.png" id="1_0taut"]
 [ext_resource type="Script" uid="uid://d005ju6cudbs8" path="res://code/projectile.gd" id="1_ocsyo"]
 
 [node name="Pling" type="Sprite2D"]
+texture = ExtResource("1_0taut")
 script = ExtResource("1_ocsyo")

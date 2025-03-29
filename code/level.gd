@@ -9,6 +9,8 @@ func _ready() -> void:
 	$Buildable.visible = false
 
 func update() -> void:
+	$Waves.spawn()
+	
 	for path in $Paths.get_children():
 		for enemy in path.get_children():
 			enemy.move()

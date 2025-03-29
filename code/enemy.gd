@@ -34,6 +34,8 @@ func move():
 	
 	progress += speed
 	
+	$Sprite2D.flip_h = position.x > previous_position.x
+	
 	var tween = create_tween().set_parallel().set_trans(Tween.TRANS_SINE)
 	
 	tween.tween_property($Sprite2D, 'position', $Sprite2D.position, 0.5).from($Sprite2D.position + previous_position - position)

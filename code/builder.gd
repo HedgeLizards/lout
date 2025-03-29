@@ -30,7 +30,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		select(null)
 
 func try_build(blueprint: Tower, tile_position: Vector2i):
-	if Culture.culture >= selected.cost:
+	if Culture.culture >= selected.cost and $'../Level'.can_build(tile_position):
 		$'../Level'.add_tower(selected, tile_position)
 		Culture.culture -= selected.cost
 		select(null)

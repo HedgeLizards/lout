@@ -1,6 +1,7 @@
 extends Node2D
 
 @export var num_notes: int = 1
+@onready var tile_pos = $/root/World/Grid.to_grid(position)
 
 func shoot():
 	var targets: Array[Enemy] = []

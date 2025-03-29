@@ -10,6 +10,7 @@
 
 [sub_resource type="TileSet" id="TileSet_i7141"]
 tile_shape = 1
+tile_layout = 5
 tile_size = Vector2i(128, 64)
 
 [node name="World" type="Node2D"]
@@ -22,6 +23,7 @@ unique_name_in_owner = true
 script = ExtResource("2_4mrxx")
 
 [node name="Cells" type="TileMapLayer" parent="Grid"]
+visible = false
 tile_set = SubResource("TileSet_i7141")
 
 [node name="BeatTimer" type="Timer" parent="."]

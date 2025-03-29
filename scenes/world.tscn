@@ -34,10 +34,12 @@ autostart = true
 [node name="Builder" type="Sprite2D" parent="."]
 visible = false
 modulate = Color(0.666667, 0.666667, 0.666667, 0.666667)
+z_index = 1000
 texture = ExtResource("6_i7141")
 script = ExtResource("6_qfnet")
 
 [node name="Sprite2D" type="Sprite2D" parent="Builder"]
+visible = false
 texture = ExtResource("9_7r4gi")
 
 [node name="Projectiles" type="Node2D" parent="."]

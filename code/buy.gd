@@ -1,21 +1,13 @@
 class_name Buy
 extends Control
 
-enum TowerId {None, Stringed, Drums, Flute}
-
-@export var tower_type: TowerId
-var towers: Dictionary[TowerId, Buying.Tower] = {
-	TowerId.None: null,
-	TowerId.Stringed: Buying.Stringed,
-	TowerId.Flute: Buying.Flute,
-	TowerId.Drums: Buying.Drums,
-}
+@export var tower_type: Tower.TowerId
 
 func _ready() -> void:
-	var tower := towers[tower_type]
+	var tower := Tower.from_id(tower_type)
 	if tower != null:
 		$Label.text = str(tower.cost)
 
 func _on_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.pressed and event.button_index == 1:
-		$"/root/Buying".try_buy(towers[tower_type])
+		$/root/World/Builder.try_buy(Tower.from_id(tower_type))

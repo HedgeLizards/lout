@@ -1,8 +1,15 @@
 extends Sprite2D
 
-var selected: Buying.Tower = null
+var currency: int = 100
+var selected: Tower = null
 
-func select(tower: Buying.Tower):
+func try_buy(tower: Tower):
+	if tower != null and tower.cost <= currency:
+		select(tower)
+	else:
+		select(null)
+
+func select(tower: Tower):
 	selected = tower
 	if tower == null:
 		visible = false
@@ -12,8 +19,8 @@ func select(tower: Buying.Tower):
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
-		var tile_size: Vector2 = Vector2(%Background.tile_set.tile_size) * %Background.scale
-		global_position = (event.global_position / tile_size).round() * tile_size
+		#var tile_size: Vector2 = Vector2(%Background.tile_set.tile_size) * %Background.scale
+		global_position = %Grid.to_world(%Grid.to_grid(event.global_position))
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:

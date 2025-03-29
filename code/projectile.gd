@@ -10,16 +10,16 @@ var damage: float = 1
 
 func _ready() -> void:
 	start_pos = position
+	target_pos = target.position
+	target.tree_exited.connect(func(): target = null)
 
 func _process(delta: float) -> void:
-	if is_instance_valid(target):
-		target_pos = target.position
 	progress = min(progress + delta, total_flight)
 	position = lerp(start_pos, target_pos, progress / total_flight)
 	if progress == total_flight:
 		impact()
 
 func impact() -> void:
-	if is_instance_valid(target):
+	if target != null and is_instance_valid(target):
 		target.damage(damage)
 	queue_free()

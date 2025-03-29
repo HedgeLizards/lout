@@ -44,6 +44,10 @@ func move():
 		Culture.damage_culture(unculture)
 		queue_free()
 
+func progress_left() -> float:
+	return progress / max(progress_ratio, 1e-9)
+
+
 func damage(amount: float):
 	health -= amount
 	if health <= 0:

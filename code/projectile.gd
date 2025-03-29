@@ -1,4 +1,4 @@
-extends Sprite2D
+class_name Projectile extends Sprite2D
 
 var target_pos: Vector2
 var target: Node

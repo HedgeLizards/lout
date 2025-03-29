@@ -7,7 +7,7 @@ func _ready() -> void:
 	$Cells.visible = false
 
 func to_grid(pos: Vector2) -> Vector2i:
-	return (pos / tile_size).round()
+	return $Cells.local_to_map(pos)
 
 func to_world(tilepos: Vector2i) -> Vector2:
-	return Vector2(tilepos) * tile_size
+	return $Cells.map_to_local(tilepos)

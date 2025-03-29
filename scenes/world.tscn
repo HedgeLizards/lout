@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://d3crfd65nxmuh"]
+[gd_scene load_steps=9 format=3 uid="uid://d3crfd65nxmuh"]
 
 [ext_resource type="Script" uid="uid://5qj18riatjgi" path="res://code/world.gd" id="1_nnsk1"]
 [ext_resource type="Script" uid="uid://ckaquvmk246wc" path="res://code/grid.gd" id="2_4mrxx"]
@@ -7,6 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://cx1h07kps2lqm" path="res://art/instruments/flute.png" id="6_i7141"]
 [ext_resource type="Script" uid="uid://kg533f75cagn" path="res://code/builder.gd" id="6_qfnet"]
 [ext_resource type="Texture2D" uid="uid://dsb6437twhxhw" path="res://art/selector_background.png" id="9_7r4gi"]
+
+[sub_resource type="TileSet" id="TileSet_i7141"]
+tile_shape = 1
+tile_size = Vector2i(128, 64)
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_nnsk1")
@@ -18,6 +22,7 @@ unique_name_in_owner = true
 script = ExtResource("2_4mrxx")
 
 [node name="Cells" type="TileMapLayer" parent="Grid"]
+tile_set = SubResource("TileSet_i7141")
 
 [node name="BeatTimer" type="Timer" parent="."]
 autostart = true

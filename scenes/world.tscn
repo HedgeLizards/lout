@@ -27,6 +27,7 @@ visible = false
 tile_set = SubResource("TileSet_i7141")
 
 [node name="BeatTimer" type="Timer" parent="."]
+wait_time = 0.667
 autostart = true
 
 [node name="HBoxContainer" parent="." instance=ExtResource("5_71j4m")]

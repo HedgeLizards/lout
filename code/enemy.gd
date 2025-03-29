@@ -1,9 +1,28 @@
 class_name Enemy extends PathFollow2D
 
+enum EnemyType { REGULAR, TANKY, FAST }
+
+@export var type: EnemyType
+
+var speed
+var health
+
+func _ready():
+	match (type):
+		EnemyType.REGULAR:
+			speed = 50
+			health = 10
+		EnemyType.TANKY:
+			speed = 50
+			health = 20
+		EnemyType.FAST:
+			speed = 100
+			health = 5
+
 func move():
 	var previous_position = position
 	
-	progress_ratio += 0.025
+	progress += speed
 	
 	var tween = create_tween().set_parallel().set_trans(Tween.TRANS_SINE)
 	

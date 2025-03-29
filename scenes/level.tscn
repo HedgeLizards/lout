@@ -47,8 +47,8 @@ y_sort_enabled = true
 [node name="Drums" parent="Towers" instance=ExtResource("3_ppgk2")]
 position = Vector2(192, 528)
 
-[node name="Stringed" parent="Towers" instance=ExtResource("5_ppgk2")]
-position = Vector2(512, 176)
+[node name="Guitar" parent="Towers" instance=ExtResource("5_ppgk2")]
+position = Vector2(512, 192)
 
 [node name="Flute" parent="Towers" instance=ExtResource("5_2r41h")]
 position = Vector2(256, 128)

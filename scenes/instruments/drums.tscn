@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://dboht7lma5bom"]
+[gd_scene load_steps=5 format=3 uid="uid://dboht7lma5bom"]
 
 [ext_resource type="Script" uid="uid://cclguq0rtnkna" path="res://code/instrument.gd" id="1_qgidu"]
 [ext_resource type="Texture2D" uid="uid://c84vpl7lom7ij" path="res://art/instruments/drums.png" id="1_uuae0"]
 [ext_resource type="PackedScene" uid="uid://bdooqy81avn0w" path="res://scenes/pling.tscn" id="2_hv7od"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hv7od"]
+radius = 131.939
 
 [node name="Drums" type="Node2D"]
 script = ExtResource("1_qgidu")
@@ -10,3 +13,8 @@ projectile_type = ExtResource("2_hv7od")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_uuae0")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_hv7od")

@@ -20,4 +20,5 @@ shape = SubResource("CircleShape2D_hv7od")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_hv7od")
+volume_db = 15.0
 autoplay = true

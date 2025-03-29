@@ -15,10 +15,6 @@ run/main_scene="uid://d3crfd65nxmuh"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
-[autoload]
-
-Buying="*res://code/buying.gd"
-
 [display]
 
 window/dpi/allow_hidpi=false

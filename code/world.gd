@@ -20,8 +20,8 @@ func spawn_enemy(type):
 	var enemy = Enemy.instantiate()
 	
 	enemy.type = type
-	enemy.h_offset = randf_range(-48, 48)
-	enemy.v_offset = randf_range(-48, 48)
+	enemy.h_offset = randf_range(-32, 32)
+	enemy.v_offset = randf_range(-24, 24)
 	
 	$Level/Paths/Path2D.add_child(enemy)
 

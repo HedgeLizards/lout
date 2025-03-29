@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bdooqy81avn0w"]
+
+[ext_resource type="Script" uid="uid://d005ju6cudbs8" path="res://code/projectile.gd" id="1_ocsyo"]
+
+[node name="Pling" type="Sprite2D"]
+script = ExtResource("1_ocsyo")

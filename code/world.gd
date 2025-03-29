@@ -6,6 +6,7 @@ const Enemy = preload('res://scenes/enemy.tscn')
 const BEATS_DURING_WAVE = 10
 const BEATS_BETWEEN_WAVES = 20
 
+var culture: int = 100
 var wave = [
 	[0, EnemyType.REGULAR],
 	[0.5, EnemyType.FAST],

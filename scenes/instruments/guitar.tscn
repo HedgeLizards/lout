@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bs7ofrpud6qew"]
+
+[ext_resource type="Script" uid="uid://cclguq0rtnkna" path="res://code/instrument.gd" id="1_ipitw"]
+[ext_resource type="Texture2D" uid="uid://d21itiokk37ld" path="res://art/instruments/SPR_Guitar.png" id="2_ipitw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_b3lkp"]
+radius = 128.0
+
+[node name="Guitar" type="Node2D"]
+script = ExtResource("1_ipitw")
+num_notes = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -96)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_ipitw")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -64)
+shape = SubResource("CircleShape2D_b3lkp")

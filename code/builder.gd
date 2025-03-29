@@ -1,11 +1,10 @@
 extends Sprite2D
 
-var currency: int = 100
 var selected: Tower = null
 var tile_position: Vector2i
 
-func try_buy(tower: Tower):
-	if tower != null and tower.cost <= currency:
+func try_select(tower: Tower):
+	if tower != null and tower.cost <= Culture.culture:
 		select(tower)
 	else:
 		select(null)
@@ -26,8 +25,12 @@ func _input(event: InputEvent) -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if selected != null and event is InputEventMouseButton and event.pressed and event.button_index == 1:
-		var tower = selected.scene.instantiate()
-		tower.global_position = global_position
-		$'../Level'.add_tower(selected, tile_position)
+		try_build(selected, tile_position)
 	elif event is InputEventMouseButton and event.pressed and event.button_index == 2:
+		select(null)
+
+func try_build(blueprint: Tower, tile_position: Vector2i):
+	if Culture.culture >= selected.cost and $'../Level'.can_build(tile_position):
+		$'../Level'.add_tower(selected, tile_position)
+		Culture.culture -= selected.cost
 		select(null)

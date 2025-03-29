@@ -9,9 +9,9 @@ func _init(cost: int, scene: Resource, preview: Resource):
 	self.preview = preview
 
 
-static var Stringed: Tower = Tower.new(
+static var Guitar: Tower = Tower.new(
 	25,
-	preload("res://scenes/instruments/stringed.tscn"),
+	preload("res://scenes/instruments/guitar.tscn"),
 	preload("res://art/instruments/stringed.png"),
 )
 static var Flute: Tower = Tower.new(
@@ -26,11 +26,11 @@ static var Drums: Tower = Tower.new(
 )
 
 
-enum TowerId {None, Stringed, Drums, Flute}
+enum TowerId {None, Guitar, Drums, Flute}
 
 static var towers: Dictionary[TowerId, Tower] = {
 	TowerId.None: null,
-	TowerId.Stringed: Stringed,
+	TowerId.Guitar: Guitar,
 	TowerId.Flute: Flute,
 	TowerId.Drums: Drums,
 }

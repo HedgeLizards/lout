@@ -1,8 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://dvp0hvecwwk7l"]
+[gd_scene load_steps=4 format=3 uid="uid://dvp0hvecwwk7l"]
 
 [ext_resource type="Texture2D" uid="uid://cx1h07kps2lqm" path="res://art/instruments/flute.png" id="1_5tpj5"]
+[ext_resource type="Script" uid="uid://cclguq0rtnkna" path="res://code/instrument.gd" id="1_y4x3l"]
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_818xn"]
+points = PackedVector2Array(320, 0, 0, 160, -320, 0, 0, -160)
 
 [node name="Flute" type="Node2D"]
+script = ExtResource("1_y4x3l")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_5tpj5")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("ConvexPolygonShape2D_818xn")

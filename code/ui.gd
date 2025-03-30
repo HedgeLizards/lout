@@ -62,4 +62,12 @@ func _on_call_early_pressed():
 	$'../Level/Waves'.call_next_wave_early()
 
 func _on_next_level_pressed():
-	pass # Replace with function body.
+	$PanelContainer/VBoxContainer/Waves/NextLevel.visible = false
+	
+	if get_parent().go_to_next_level():
+		$PanelContainer/VBoxContainer/Waves/NextLevel.disabled = true
+		$PanelContainer/VBoxContainer/Waves/NextLevel.text = "You've won!"
+	else:
+		$PanelContainer/VBoxContainer/Waves/NextLevel.text = "Next level"
+	
+	$PanelContainer/VBoxContainer/Waves/CallEarly.disabled = false

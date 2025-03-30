@@ -28,7 +28,7 @@ enum EnemyType { REGULAR, FAST, TANKY }
 
 var current_wave = 0
 var current_path = 0
-var beats_during_this_wave = -5
+var beats_during_this_wave = -20
 
 @onready var beats_until_spawn = initial_beats_until_spawn * beats_until_spawn_factor ** current_wave
 @onready var spawn_progress = -beats_until_spawn / 2

@@ -9,5 +9,3 @@ signal culture_changed(new_culture: int)
 
 func damage_culture(amount):
 	culture -= amount
-	if culture < 0:
-		prints("Game over")

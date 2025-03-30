@@ -2,11 +2,21 @@ extends Node2D
 
 
 const WORLD_SIZE = Vector2(1152, 648)
+const LEVELS = [
+	preload('res://scenes/level1.tscn'),
+	preload('res://scenes/level2.tscn'),
+]
 
-var culture: int = 100
+var current_level = 0
 
 
 func _ready():
+	Culture.culture_changed.connect(
+		func(new_culture):
+			if new_culture < 0:
+				game_over()
+	)
+	
 	RenderingServer.set_default_clear_color(Color.from_rgba8(49, 119, 204))
 	
 	if !OS.has_feature('web'):
@@ -29,3 +39,33 @@ func update_camera_zoom():
 
 func _on_beat_timer_timeout():
 	$Level.update()
+
+
+func game_over():
+	$BeatTimer.stop()
+	
+	$UI/PanelContainer/VBoxContainer/Waves/CallEarly.disabled = true
+	
+	if !$UI/PanelContainer/VBoxContainer/Waves/NextLevel.visible:
+		$UI/PanelContainer/VBoxContainer/Waves/NextLevel.text = 'Retry level'
+		$UI/PanelContainer/VBoxContainer/Waves/NextLevel.disabled = false
+		$UI/PanelContainer/VBoxContainer/Waves/NextLevel.visible = true
+		
+		current_level -= 1
+
+
+func go_to_next_level():
+	current_level += 1
+	
+	$Level.free()
+	
+	var next_level = LEVELS[current_level].instantiate()
+	
+	add_child(next_level)
+	move_child(next_level, 0)
+	
+	Culture.culture = 100
+	
+	$BeatTimer.start()
+	
+	return current_level + 1 == LEVELS.size()

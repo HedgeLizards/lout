@@ -29,7 +29,6 @@ layout_mode = 2
 [node name="Buying" type="VBoxContainer" parent="PanelContainer/VBoxContainer"]
 layout_direction = 3
 layout_mode = 2
-size_flags_horizontal = 4
 
 [node name="CultureLabel" type="Label" parent="PanelContainer/VBoxContainer/Buying"]
 layout_mode = 2
@@ -50,22 +49,31 @@ offset_bottom = 68.0
 color = Color(0, 0, 0, 0)
 
 [node name="BuyFlute" parent="PanelContainer/VBoxContainer/Buying" instance=ExtResource("1_nt7q6")]
+custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
+size_flags_horizontal = 4
 texture = ExtResource("2_gdt2y")
 tower_type = 3
 
 [node name="BuyGuitar" parent="PanelContainer/VBoxContainer/Buying" instance=ExtResource("1_nt7q6")]
+custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
+size_flags_horizontal = 4
 texture = ExtResource("2_x4jx1")
 tower_type = 1
 
 [node name="BuyDrums" parent="PanelContainer/VBoxContainer/Buying" instance=ExtResource("1_nt7q6")]
+custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
+size_flags_horizontal = 4
 texture = ExtResource("4_wm3ai")
 tower_type = 2
 
 [node name="CancelBuy" parent="PanelContainer/VBoxContainer/Buying" instance=ExtResource("1_nt7q6")]
+custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 texture = ExtResource("5_wm3ai")
 
 [node name="Waves" type="VBoxContainer" parent="PanelContainer/VBoxContainer"]

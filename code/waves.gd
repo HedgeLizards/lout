@@ -116,4 +116,6 @@ func spawn_enemy(type):
 	current_path = (current_path + 1) % path_combination.size()
 
 func call_next_wave_early():
+	Culture.culture -= ceil(beats_during_this_wave / 2)
+	
 	beats_during_this_wave = -1

@@ -19,6 +19,7 @@ func select(tower: Tower):
 	else:
 		visible = true
 		texture = tower.preview
+	$'../UI/PanelContainer/VBoxContainer/Buying/CancelBuy'.visible = visible
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:

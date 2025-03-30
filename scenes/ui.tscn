@@ -71,6 +71,7 @@ texture = ExtResource("4_wm3ai")
 tower_type = 2
 
 [node name="CancelBuy" parent="PanelContainer/VBoxContainer/Buying" instance=ExtResource("1_nt7q6")]
+visible = false
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 size_flags_horizontal = 4

@@ -9,11 +9,12 @@ var culture: int = 100
 func _ready():
 	RenderingServer.set_default_clear_color(Color.from_rgba8(49, 119, 204))
 	
-	var window = get_window()
-	var screen_scale = DisplayServer.screen_get_scale()
-	
-	window.position -= Vector2i(window.size * (screen_scale - 1) / 2)
-	window.size *= screen_scale
+	if !OS.has_feature('web'):
+		var window = get_window()
+		var screen_scale = DisplayServer.screen_get_scale()
+		
+		window.position -= Vector2i(window.size * (screen_scale - 1) / 2)
+		window.size *= screen_scale
 	
 	update_camera_zoom()
 	

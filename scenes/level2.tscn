@@ -90,4 +90,4 @@ unique_name_in_owner = true
 y_sort_enabled = true
 
 [node name="Drums" parent="Towers" instance=ExtResource("5_xa7n4")]
-position = Vector2(576, 567)
+position = Vector2(576, 608)

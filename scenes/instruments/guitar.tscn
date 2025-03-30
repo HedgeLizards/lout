@@ -11,7 +11,7 @@ script = ExtResource("1_ipitw")
 num_notes = 4
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -40)
+position = Vector2(0, -24.625)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("2_ipitw")
 

@@ -19,6 +19,8 @@ func select(tower: Tower):
 	else:
 		visible = true
 		texture = tower.preview
+		offset = tower.preview_position / tower.preview_scale
+		scale = tower.preview_scale
 	$'../UI/PanelContainer/VBoxContainer/Buying/CancelBuy'.visible = visible
 
 func _input(event: InputEvent) -> void:

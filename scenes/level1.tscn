@@ -85,4 +85,4 @@ unique_name_in_owner = true
 y_sort_enabled = true
 
 [node name="Drums" parent="Towers" instance=ExtResource("3_ppgk2")]
-position = Vector2(188, 557)
+position = Vector2(192, 544)

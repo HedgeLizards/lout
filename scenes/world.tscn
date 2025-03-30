@@ -45,4 +45,7 @@ texture = ExtResource("9_7r4gi")
 
 [node name="Projectiles" type="Node2D" parent="."]
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 324)
+
 [connection signal="timeout" from="BeatTimer" to="." method="_on_beat_timer_timeout"]

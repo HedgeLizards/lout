@@ -11,12 +11,13 @@ script = ExtResource("1_ipitw")
 num_notes = 4
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -96)
+position = Vector2(0, -40)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("2_ipitw")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+visible = false
 position = Vector2(0, -64)
 shape = SubResource("CircleShape2D_b3lkp")

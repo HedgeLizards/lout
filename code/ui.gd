@@ -18,6 +18,16 @@ func _ready():
 		stylebox.content_margin_bottom *= screen_scale
 	
 	for control in [
+		$PanelContainer,
+		$PanelContainer/VBoxContainer/Buying/BuyFlute,
+		$PanelContainer/VBoxContainer/Buying/BuyGuitar,
+		$PanelContainer/VBoxContainer/Buying/BuyDrums,
+		$PanelContainer/VBoxContainer/Buying/CancelBuy,
+		$PanelContainer/VBoxContainer/Waves/NextWave,
+	]:
+		control.custom_minimum_size *= screen_scale
+	
+	for control in [
 		$PanelContainer/VBoxContainer,
 		$PanelContainer/VBoxContainer/Buying,
 		$PanelContainer/VBoxContainer/Waves,
@@ -34,15 +44,6 @@ func _ready():
 		$PanelContainer/VBoxContainer/Waves/CallEarly,
 	]:
 		control.add_theme_font_size_override('font_size', control.get_theme_font_size('font_size') * screen_scale)
-	
-	for control in [
-		$PanelContainer/VBoxContainer/Buying/BuyFlute,
-		$PanelContainer/VBoxContainer/Buying/BuyGuitar,
-		$PanelContainer/VBoxContainer/Buying/BuyDrums,
-		$PanelContainer/VBoxContainer/Buying/CancelBuy,
-		$PanelContainer/VBoxContainer/Waves/NextWave,
-	]:
-		control.custom_minimum_size *= screen_scale
 
 func update_number_of_waves(number_of_waves):
 	$PanelContainer/VBoxContainer/Waves/Progress.text = 'Wave 1/%d' % number_of_waves

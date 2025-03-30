@@ -5,7 +5,6 @@ var towers: Dictionary[Vector2i, Node]
 func _ready() -> void:
 	for tower in $Towers.get_children():
 		towers[tower.tile_pos] = tower
-		tower.get_node('AudioStreamPlayer').play()
 	# visible in-editor, but not in-game
 	$Buildable.visible = false
 

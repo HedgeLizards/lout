@@ -1,6 +1,5 @@
 extends Node2D
 
-
 const WORLD_SIZE = Vector2(1152, 648)
 const LEVELS = [
 	preload('res://scenes/level1.tscn'),
@@ -8,7 +7,6 @@ const LEVELS = [
 ]
 
 var current_level = 0
-
 
 func _ready():
 	Culture.culture_changed.connect(
@@ -30,16 +28,13 @@ func _ready():
 	
 	get_viewport().size_changed.connect(update_camera_zoom)
 
-
 func update_camera_zoom():
 	var viewport_size = get_viewport_rect().size
 	
 	$Camera2D.zoom = Vector2.ONE * min(viewport_size.x / WORLD_SIZE.x, viewport_size.y / WORLD_SIZE.y)
 
-
 func _on_beat_timer_timeout():
 	$Level.update()
-
 
 func game_over():
 	$BeatTimer.stop()
@@ -52,7 +47,6 @@ func game_over():
 		$UI/PanelContainer/VBoxContainer/Waves/NextLevel.visible = true
 		
 		current_level -= 1
-
 
 func go_to_next_level():
 	current_level += 1
@@ -69,3 +63,7 @@ func go_to_next_level():
 	$BeatTimer.start()
 	
 	return current_level + 1 == LEVELS.size()
+
+func _unhandled_key_input(event):
+	if event.keycode == KEY_M && event.pressed && !event.echo:
+		AudioServer.set_bus_mute(0, !AudioServer.is_bus_mute(0))

@@ -74,15 +74,19 @@ types = Array[int]([2])
 y_sort_enabled = true
 
 [node name="Path2D1" type="Path2D" parent="Paths"]
+y_sort_enabled = true
 curve = SubResource("Curve2D_alqfr")
 
 [node name="Path2D2" type="Path2D" parent="Paths"]
+y_sort_enabled = true
 curve = SubResource("Curve2D_yqkch")
 
 [node name="Path2D3" type="Path2D" parent="Paths"]
+y_sort_enabled = true
 curve = SubResource("Curve2D_6ep0u")
 
 [node name="Path2D4" type="Path2D" parent="Paths"]
+y_sort_enabled = true
 curve = SubResource("Curve2D_hrcei")
 
 [node name="Towers" type="Node2D" parent="."]

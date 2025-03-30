@@ -41,8 +41,8 @@ func game_over():
 	
 	$UI/PanelContainer/VBoxContainer/Waves/CallEarly.disabled = true
 	
-	if !$UI/PanelContainer/VBoxContainer/Waves/NextLevel.visible:
-		$UI/PanelContainer/VBoxContainer/Waves/NextLevel.text = 'Retry level'
+	if !$UI/PanelContainer/VBoxContainer/Waves/NextLevel.visible || current_level == LEVELS.size() - 1:
+		$UI/PanelContainer/VBoxContainer/Waves/NextLevel.text = 'Retry level' if current_level < LEVELS.size() - 1 else 'Replay level'
 		$UI/PanelContainer/VBoxContainer/Waves/NextLevel.disabled = false
 		$UI/PanelContainer/VBoxContainer/Waves/NextLevel.visible = true
 		
@@ -62,7 +62,7 @@ func go_to_next_level():
 	
 	$BeatTimer.start()
 	
-	return current_level + 1 == LEVELS.size()
+	return current_level == LEVELS.size() - 1
 
 func _unhandled_key_input(event):
 	if event.keycode == KEY_M && event.pressed && !event.echo:

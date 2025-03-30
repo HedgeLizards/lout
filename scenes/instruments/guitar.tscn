@@ -18,6 +18,4 @@ texture = ExtResource("2_ipitw")
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-visible = false
-position = Vector2(0, -64)
 shape = SubResource("CircleShape2D_b3lkp")

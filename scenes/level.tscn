@@ -63,6 +63,7 @@ tile_set = SubResource("TileSet_ppgk2")
 [node name="Waves" type="Node" parent="."]
 script = ExtResource("5_ppgk2")
 beats_until_spawn_factor = 0.9
+number_to_win = 5
 types = Array[int]([0, 1])
 
 [node name="Paths" type="Node2D" parent="."]

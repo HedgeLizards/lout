@@ -30,7 +30,7 @@ tile_set = SubResource("TileSet_i7141")
 wait_time = 0.667
 autostart = true
 
-[node name="HBoxContainer" parent="." instance=ExtResource("5_71j4m")]
+[node name="UI" parent="." instance=ExtResource("5_71j4m")]
 
 [node name="Builder" type="Sprite2D" parent="."]
 visible = false

@@ -19,6 +19,7 @@ enum EnemyType { REGULAR, FAST, TANKY }
 
 @export var initial_beats_until_spawn = 2.0
 @export var beats_until_spawn_factor = 1.0
+@export var number_to_win = 20
 @export var types: Array[WaveType]
 
 var current_wave = 0
@@ -27,11 +28,16 @@ var beats_during_this_wave = -5
 
 @onready var beats_until_spawn = initial_beats_until_spawn
 @onready var spawn_progress = -beats_until_spawn / 2
+@onready var ui = $'../../UI'
+@onready var paths = $'../Paths'
 @onready var path_combinations = calculate_path_combinations()
+
+func _ready():
+	ui.update_number_of_waves(number_to_win)
 
 func calculate_path_combinations():
 	var combinations = []
-	var number_of_paths = $'../Paths'.get_child_count()
+	var number_of_paths = paths.get_child_count()
 	
 	for i in number_of_paths:
 		var positions = []
@@ -69,7 +75,14 @@ func spawn():
 		beats_during_this_wave = -BEATS_BETWEEN_WAVES
 		beats_until_spawn *= beats_until_spawn_factor
 		spawn_progress = -beats_until_spawn / 2
-	elif beats_during_this_wave >= 0:
+	
+	if beats_during_this_wave <= 0:
+		ui.update_next_wave(float(beats_during_this_wave + BEATS_BETWEEN_WAVES) / BEATS_BETWEEN_WAVES)
+	
+	if beats_during_this_wave == 0:
+		ui.update_current_wave(current_wave)
+	
+	if beats_during_this_wave >= 0:
 		while spawn_progress + beats_until_spawn <= beats_during_this_wave + 1:
 			spawn_progress += beats_until_spawn
 			
@@ -94,14 +107,9 @@ func spawn_enemy(type):
 	
 	var path_combination = path_combinations[current_wave % path_combinations.size()]
 	
-	$'../Paths'.get_child(path_combination[current_path]).add_child(enemy)
+	paths.get_child(path_combination[current_path]).add_child(enemy)
 	
 	current_path = (current_path + 1) % path_combination.size()
 
 func call_next_wave_early():
-	if beats_during_this_wave < -1:
-		beats_during_this_wave = -1
-
-func _unhandled_key_input(event):
-	if event.keycode == KEY_SPACE && event.pressed && !event.echo:
-		call_next_wave_early()
+	beats_during_this_wave = -1

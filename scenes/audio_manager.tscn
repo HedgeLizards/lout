@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://8u14xsrsft6b"]
+
+[ext_resource type="Script" uid="uid://cixjwey3a313g" path="res://code/audio_manager.gd" id="1_3asnw"]
+[ext_resource type="AudioStream" uid="uid://s44r8u6vo05a" path="res://audio/MUS_Drum.ogg" id="1_liach"]
+[ext_resource type="AudioStream" uid="uid://wehqpliiqmui" path="res://audio/MUS_Harp.ogg" id="2_3asnw"]
+
+[sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_m6ggh"]
+stream_count = 2
+stream_0/stream = ExtResource("1_liach")
+stream_0/volume = 0.0
+stream_1/stream = ExtResource("2_3asnw")
+stream_1/volume = -4.45
+
+[node name="Audio Manager" type="Node"]
+script = ExtResource("1_3asnw")
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamSynchronized_m6ggh")
+autoplay = true
+bus = &"Music"

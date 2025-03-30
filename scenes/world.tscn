@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://d3crfd65nxmuh"]
+[gd_scene load_steps=9 format=3 uid="uid://d3crfd65nxmuh"]
 
 [ext_resource type="Script" uid="uid://5qj18riatjgi" path="res://code/world.gd" id="1_nnsk1"]
 [ext_resource type="Script" uid="uid://ckaquvmk246wc" path="res://code/grid.gd" id="2_4mrxx"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c0pp0m557b0hp" path="res://scenes/ui.tscn" id="5_71j4m"]
 [ext_resource type="Texture2D" uid="uid://cx1h07kps2lqm" path="res://art/instruments/flute.png" id="6_i7141"]
 [ext_resource type="Script" uid="uid://kg533f75cagn" path="res://code/builder.gd" id="6_qfnet"]
+[ext_resource type="PackedScene" uid="uid://8u14xsrsft6b" path="res://scenes/audio_manager.tscn" id="7_i7141"]
 
 [sub_resource type="TileSet" id="TileSet_i7141"]
 tile_shape = 1
@@ -42,5 +43,7 @@ script = ExtResource("6_qfnet")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(576, 324)
+
+[node name="Audio Manager" parent="." instance=ExtResource("7_i7141")]
 
 [connection signal="timeout" from="BeatTimer" to="." method="_on_beat_timer_timeout"]

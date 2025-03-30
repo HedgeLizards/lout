@@ -12,13 +12,17 @@ const WAVES = [
 		[0, EnemyType.TANKY],
 		[0.5, EnemyType.REGULAR]
 	],
+	[
+		[0, EnemyType.TANKY],
+		[0.5, EnemyType.FAST]
+	],
 ]
 
-enum WaveType { REGULAR_THEN_FAST, TANKY_THEN_REGULAR }
+enum WaveType { REGULAR_THEN_FAST, TANKY_THEN_REGULAR, TANKY_THEN_FAST }
 enum EnemyType { REGULAR, FAST, TANKY }
 
 @export var initial_beats_until_spawn = 2.0
-@export var beats_until_spawn_factor = 1.0
+@export var beats_until_spawn_factor = 0.9
 @export var number_to_win = 20
 @export var types: Array[WaveType]
 
@@ -26,7 +30,7 @@ var current_wave = 0
 var current_path = 0
 var beats_during_this_wave = -5
 
-@onready var beats_until_spawn = initial_beats_until_spawn
+@onready var beats_until_spawn = initial_beats_until_spawn * beats_until_spawn_factor ** current_wave
 @onready var spawn_progress = -beats_until_spawn / 2
 @onready var ui = $'../../UI'
 @onready var paths = $'../Paths'
@@ -89,7 +93,7 @@ func spawn():
 			var wave_progress_ratio = spawn_progress / BEATS_DURING_WAVE 
 			var enemy_type
 			
-			for phase in WAVES[current_wave % types.size()]:
+			for phase in WAVES[types[current_wave % types.size()]]:
 				if wave_progress_ratio >= phase[0]:
 					enemy_type = phase[1]
 				else:

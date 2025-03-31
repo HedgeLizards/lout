@@ -7,6 +7,7 @@ var layers := {}
 
 func _ready():
 	var sync_node = $Music
+	sync_node.play()
 	for player in sync_node.get_children():
 		if player is AudioStreamPlayer:
 			layers[player.name] = {

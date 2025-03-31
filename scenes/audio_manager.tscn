@@ -16,5 +16,4 @@ script = ExtResource("1_3asnw")
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamSynchronized_m6ggh")
-autoplay = true
 bus = &"Music"
